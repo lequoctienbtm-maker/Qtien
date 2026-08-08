@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QTIEN // PROFILE.exe</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22white%22>_</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="rain"></canvas>
+<div class="scanlines"></div>
+<div class="noise"></div>
+
+<!-- ===== BOOT / INTRO SCREEN ===== -->
+<section id="boot">
+  <div class="boot-inner">
+    <pre id="boot-log"></pre>
+    <button id="boot-btn" class="hidden">
+      <span>[ NHẤN ĐỂ KHỞI ĐỘNG ]</span>
+    </button>
+  </div>
+  <div class="boot-corner tl">┌</div>
+  <div class="boot-corner tr">┐</div>
+  <div class="boot-corner bl">└</div>
+  <div class="boot-corner br">┘</div>
+</section>
+
+<!-- ===== AUDIO ===== -->
+<audio id="bg-audio" loop preload="none">
+  <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ===== NAV ===== -->
+<header id="site-header">
+  <a href="#home" class="logo">QTIEN<span class="blink">_</span></a>
+
+  <div class="audio-toggle" id="audio-toggle" title="Bật/tắt nhạc">
+    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+  </div>
+
+  <button id="menu-btn" aria-label="Mở menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav id="menu">
+  <div class="menu-grid">
+    <div class="menu-col">
+      <p class="menu-label">// ĐIỀU_HƯỚNG</p>
+      <ol>
+        <li><a href="#home" data-num="01">TRANG_CHỦ</a></li>
+        <li><a href="#about" data-num="02">GIỚI_THIỆU</a></li>
+        <li><a href="#skills" data-num="03">KỸ_NĂNG</a></li>
+        <li><a href="#interests" data-num="04">SỞ_THÍCH</a></li>
+        <li><a href="#scripts" data-num="05">SCRIPT</a></li>
+        <li><a href="#contact" data-num="06">LIÊN_HỆ</a></li>
+      </ol>
+    </div>
+    <div class="menu-col menu-meta">
+      <p class="menu-label">// TRẠNG_THÁI</p>
+      <p class="meta-line">USER: qtien</p>
+      <p class="meta-line">AGE: 16</p>
+      <p class="meta-line">LOC: Quảng Nam, VN</p>
+      <p class="meta-line">STATUS: <span class="ok">ONLINE</span></p>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== MAIN ===== -->
+<main id="page">
+
+  <!-- HOME -->
+  <section id="home" class="section hero">
+    <div class="eyebrow">// WHOAMI</div>
+    <h1 class="glitch" data-text="QTIEN">QTIEN</h1>
+    <p class="typed-sub"><span id="typed"></span><span class="cursor">|</span></p>
+    <div class="hero-meta">
+      <div><span class="k">TUỔI</span><span class="v">16</span></div>
+      <div><span class="k">QUÊ_QUÁN</span><span class="v">Quảng Nam</span></div>
+      <div><span class="k">NGHỀ</span><span class="v">Vibe Coder</span></div>
+    </div>
+    <a href="#about" class="scroll-cue">SCROLL ↓</a>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="section-head">
+      <span class="num">02</span>
+      <h2>GIỚI_THIỆU</h2>
+    </div>
+    <div class="about-grid">
+      <div class="avatar-frame" id="avatar-frame">
+        <img id="avatar-img" src="assets/avatar.jpg" alt="Ảnh đại diện Qtien"
+             onerror="this.onerror=null;this.src='https://api.dicebear.com/9.x/bottts/svg?seed=qtien&backgroundColor=000000&primaryColor=ffffff';">
+        <div class="avatar-scan"></div>
+      </div>
+      <div class="about-text">
+        <p><span class="prompt">&gt;</span> Xin chào, mình là <strong>Qtien</strong>, 16 tuổi, hiện đang sinh sống tại Quảng Nam.</p>
+        <p><span class="prompt">&gt;</span> Đam mê với game, từ chơi đến tự tay làm ra chúng.</p>
+        <p><span class="prompt">&gt;</span> Đang học viết code theo kiểu vừa vibe vừa học — không phải copy-paste vô tri. Mỗi dòng chạy được là một lần hiểu thêm.</p>
+        <p><span class="prompt">&gt;</span> Mục tiêu: biến ý tưởng trong đầu thành thứ chạy được thật, dù chỉ bằng vibe và một chút liều lĩnh.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="section-head">
+      <span class="num">03</span>
+      <h2>KỸ_NĂNG</h2>
+    </div>
+    <p class="section-sub">// độ thuần thục — thang điểm 1–100</p>
+    <div class="skills-grid">
+      <div class="radar-wrap">
+        <canvas id="radar" width="560" height="560"></canvas>
+      </div>
+      <ul class="skills-list" id="skills-list"></ul>
+    </div>
+  </section>
+
+  <!-- INTERESTS -->
+  <section id="interests" class="section">
+    <div class="section-head">
+      <span class="num">04</span>
+      <h2>SỞ_THÍCH</h2>
+    </div>
+    <div class="interest-grid">
+      <div class="interest-card">
+        <span class="interest-idx">[01]</span>
+        <h3>Game</h3>
+        <p>Cày mọi thể loại, từ indie dị đến AAA. Vừa chơi vừa soi cách người ta thiết kế hệ thống.</p>
+      </div>
+      <div class="interest-card">
+        <span class="interest-idx">[02]</span>
+        <h3>Làm Game</h3>
+        <p>Tự mày mò dựng thế giới của riêng mình — dù mới chỉ là những prototype nhỏ.</p>
+      </div>
+      <div class="interest-card">
+        <span class="interest-idx">[03]</span>
+        <h3>Viết Code</h3>
+        <p>Vừa vibe vừa học, không phải kiểu copy-paste vô tri — mỗi dòng code chạy được là một lần hiểu thêm.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCRIPTS -->
+  <section id="scripts" class="section scripts-section">
+    <div class="section-head">
+      <span class="num">05</span>
+      <h2>SCRIPT</h2>
+    </div>
+    <p class="section-sub">// kho script đã từng viết — lướt ngang để xem, bấm copy để lấy</p>
+
+    <div class="scripts-track-wrap">
+      <div class="scripts-track" id="scripts-track"></div>
+    </div>
+    <p class="scripts-hint">← lướt để xem thêm →</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <div class="section-head">
+      <span class="num">06</span>
+      <h2>LIÊN_HỆ</h2>
+    </div>
+    <p class="section-sub">// kết nối với mình qua các kênh dưới đây</p>
+    <div class="contact-links" id="contact-links"></div>
+    <footer>
+      <p>© 2026 QTIEN — built in the terminal, deployed on GitHub Pages.</p>
+    </footer>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
