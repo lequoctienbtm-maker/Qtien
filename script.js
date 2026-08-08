@@ -24,14 +24,8 @@ const CONFIG = {
      Thêm script mới: copy 1 khối { title:..., content:`...` } bên dưới, sửa lại, thêm dấu phẩy. */
   scripts: [
     {
-      title: "Roblox Speed Script",
-      content: `local player = game.Players.LocalPlayer
-local char = player.Character or player.CharacterAdded:Wait()
-local humanoid = char:WaitForChild("Humanoid")
-
-humanoid.WalkSpeed = 50
-
-print("Speed boost activated!")`
+      title: "AT HUB(roblox):Quiet Place Deadzone",
+      content: `loadstring(game:HttpGet("https://gist.githubusercontent.com/lequoctienbtm-maker/d3d81e8780e94a6823da62b00b8bf29f/raw/AT%20HUB(vibecode%20by%20Qtien)"))()`
     },
     {
       title: "Minecraft Auto Farm",
