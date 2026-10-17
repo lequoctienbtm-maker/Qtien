@@ -28,16 +28,8 @@ const CONFIG = {
       content: `loadstring(game:HttpGet("https://gist.githubusercontent.com/lequoctienbtm-maker/d3d81e8780e94a6823da62b00b8bf29f/raw/AT%20HUB(vibecode%20by%20Qtien)"))()`
     },
     {
-      title: "Minecraft Auto Farm",
-      content: `function autoFarm() {
-  const crops = ["wheat", "carrot", "potato"];
-  crops.forEach(crop => {
-    harvest(crop);
-    replant(crop);
-  });
-}
-
-setInterval(autoFarm, 5000);`
+      title: "Neol-Soul-Game-",
+      content: ' https://qtien.itch.io/neol-soul '
     },
     {
       title: "Web Scraper Cơ Bản",
